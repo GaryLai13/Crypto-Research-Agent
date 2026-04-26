@@ -14,7 +14,7 @@ export interface Coin {
 }
 
 export interface CoinDetail extends Coin {
-  history: Coin[];
+  history: { timestamp: string; price: number }[];
 }
 
 export interface AnalysisResult {
