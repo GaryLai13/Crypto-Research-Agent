@@ -5,7 +5,7 @@
 
 
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Menu, X } from 'lucide-react';
 import Navigation from './components/Navigation';
@@ -28,7 +28,7 @@ export default function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      <HashRouter>
         <div className="flex h-screen bg-[#0a0b0d] text-slate-200 font-sans overflow-hidden relative">
           <Navigation isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
           
@@ -77,7 +77,7 @@ export default function App() {
             </div>
           </main>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </QueryClientProvider>
   );
 }
