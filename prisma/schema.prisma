@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model CryptoSnapshot {
+  id               String   @id @default(cuid())
+  coingeckoId      String   // Added for historical data fetching
+  symbol           String
+  name             String
+  price            Float
+  marketCap        Float
+  change24h        Float
+  change7d         Float
+  volume           Float
+  rank             Int
+  timestamp        DateTime @default(now())
+
+  @@index([symbol])
+  @@index([timestamp])
+}
+
+model AnalysisSession {
+  id         String   @id @default(cuid())
+  symbol     String
+  trend      String
+  confidence Float
+  summary    String
+  signals    String   // Stored as JSON string
+  risks      String   // Stored as JSON string
+  suggestion String
+  metadata   String   // Original input data as JSON string
+  createdAt  DateTime @default(now())
+
+  @@index([symbol])
+}

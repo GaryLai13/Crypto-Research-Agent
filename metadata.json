@@ -1,0 +1,6 @@
+{
+  "name": "Crypto Research Agent",
+  "description": "A high-fidelity cryptocurrency analysis system using real-time market data and Gemini AI to generate structured research insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

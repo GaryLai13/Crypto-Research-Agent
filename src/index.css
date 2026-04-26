@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #6366f1; /* indigo-500 */
+}
+
+@layer base {
+  body {
+    @apply bg-[#0a0b0d] text-slate-200 antialiased;
+  }
+}
+
